@@ -120,7 +120,7 @@ class SmithingAutoUpdater
     private function pushChanges()
     {
         $this->setupGithubAction();
-        exec('git commit -m "Update Smithing Template"');
+        exec('git commit -m "chore(auto-update): 🔧 Update Smithing Template"');
         exec('git push origin master');
     }
 }
