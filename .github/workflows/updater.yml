@@ -3,6 +3,7 @@ name: Auto Update Smithing Template
 on:
   schedule:
     - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   update:
@@ -16,4 +17,7 @@ jobs:
       with:
         php-version: '8.1'
     - name: Run update script
+      env:
+        GIT_NAME: ${{ secrets.GIT_NAME }}
+        GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
       run: php data-update.php

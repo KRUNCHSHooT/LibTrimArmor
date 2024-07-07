@@ -108,8 +108,8 @@ class SmithingAutoUpdater
 
     private function setupGithubAction()
     {
-        exec('git config --global user.name "github-actions[bot]"');
-        exec('git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"');
+        exec('git config --global user.name "' . getenv('GIT_NAME') . '"');
+        exec('git config --global user.email "' . getenv('GIT_EMAIL') . '"');
     }
 
     private function commitChanges(string $filename)
